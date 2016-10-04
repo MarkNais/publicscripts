@@ -1,8 +1,9 @@
 function({caller:C,calling_script:S,this_script:T}, A)
 {
 	//var caller = context.caller;
-	var l = #s.scripts.lib();
-	if(A==null||A=={}) return {ok:false,msg:"An -escrow- test, pleaes use !donate!:+true+"}
+    var l = #s.scripts.lib();
+    //if called as marknstein.donate100gc or marknstein.donate100gc{}
+    if(A===null||l.is_def(A)) return {ok:false,msg:"An -escrow- test, pleaes use !donate!:+true+"}
 	if(!A.donate) return {ok:true,msg:"`5:-(`"} //They refused!
 
 	if(A.donate){                               //They accepted!
